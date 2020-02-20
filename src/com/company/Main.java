@@ -3,8 +3,12 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// create an interface class
-        //call a function to initialize the interface (read data, ect)
+        //create dataController, and call a function to initialize all data
+            //read stuff from files, ect ect
+        //create a reportController, and pass dataController into it
+        //create a autoReport, and pass reportController into it (threading?)
+        //create an Interface class, and pass dataController and reportController into it
+        //call a function to initialize the interface
 
         System.out.println("Hello World!");
     }
