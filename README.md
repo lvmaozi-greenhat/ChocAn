@@ -2,6 +2,8 @@ A CS300 group project: Data management for Chocaholics Anonymous
 
 Remember! Make branches, not forks! 
 
+test
+
 Start-up using intelliJ:
 Click "Get from vVersion Control"
 copy/paste URL from gitHub's "Clone or Download" menu
