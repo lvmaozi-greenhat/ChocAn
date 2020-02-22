@@ -18,3 +18,5 @@ Merging:
 From the master branch, go down and select the context menu on the branch you wish to merge. 
 Select "merge into current"
 Push into gitHub repository after merging.
+
+use java arraylists
