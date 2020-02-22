@@ -23,4 +23,4 @@ Push into gitHub repository after merging.
 
 jxmjxmtest
 
-Yifan has no taste
+Yifan has zero taste
