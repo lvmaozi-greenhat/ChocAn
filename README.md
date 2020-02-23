@@ -2,10 +2,8 @@ A CS300 group project: Data management for Chocaholics Anonymous
 
 Remember! Make branches, not forks! 
 
-test
-
 Start-up using intelliJ:
-Click "Get from vVersion Control"
+Click "Get from Version Control"
 copy/paste URL from gitHub's "Clone or Download" menu
 
 making / working on a branch:
@@ -22,7 +20,3 @@ Select "merge into current"
 Push into gitHub repository after merging.
 
 Use java ArrayLists
-
-jxmjxmtest
-
-Yifan has zero taste
