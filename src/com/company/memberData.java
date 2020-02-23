@@ -5,4 +5,6 @@ public class memberData extends Data {
     //data public or protected
     //Contains a data structure of Service classes
         //Service classes indicate which services have been provided to the member
+
+    //TODO: load in data from text files and load into objects
 }

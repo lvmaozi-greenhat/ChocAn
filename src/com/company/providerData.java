@@ -6,4 +6,8 @@ public class providerData extends Data {
     //contains data structure of service class
         //this shows what services a provider can provide to a member
         //function to add a service to a member?
+
+    //TODO: load in data from text files and load into objects
 }
+
+//test
