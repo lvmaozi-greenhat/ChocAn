@@ -1,5 +1,14 @@
 package com.company;
 
+import java.util.Date;
+
 public class Service {
-    //service information, such as service name, service ID, ect ect
+    Date service_date;
+    Date receiving_date_time;
+    String member_name;
+    String provider_name;
+    String service_name;
+    int member_id;
+    int service_id;
+    double fee;
 }
