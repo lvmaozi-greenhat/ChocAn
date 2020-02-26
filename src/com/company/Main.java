@@ -11,5 +11,7 @@ public class Main {
         //call a function to initialize the interface
 
         System.out.println("Hello World!");
+        Data A=new Data("jack",123456789,"address","city","OR",12345);
+        A.printReport();
     }
 }
