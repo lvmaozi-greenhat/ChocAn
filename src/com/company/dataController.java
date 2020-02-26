@@ -14,9 +14,20 @@ public class dataController {
     ArrayList<Service> services;
 
     void loadAll() {
+        /*
+        //provider data:
+        File[] providerFiles = new File ("path/to/providerDir").listFiles(); //This creates an array of all files in a directory
+        for(File toRead : providerFiles){ //for every file in that directory
+            if(toRead.isFile()){
+                //new scanner tmpScan(toRead);
+                //new providerData new(tmpScan);
+                //add to arrayList providers: new;
+            }
+        }
+         */
+        //Something similar will also be used for memberData and Service data
     }
 
     //TODO: implement all of those
-    //Mi is Jesse's grand grand father 
 
 }
