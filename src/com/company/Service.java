@@ -9,6 +9,7 @@ public class Service {
     String member_name;
     String provider_name;
     String service_name;
+    String comments; //OPTIONAL
     int member_id;
     int service_id;
     double fee;
