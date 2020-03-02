@@ -2,10 +2,8 @@ A CS300 group project: Data management for Chocaholics Anonymous
 
 Remember! Make branches, not forks! 
 
-test
-
 Start-up using intelliJ:
-Click "Get from vVersion Control"
+Click "Get from Version Control"
 copy/paste URL from gitHub's "Clone or Download" menu
 
 making / working on a branch:
@@ -21,6 +19,5 @@ From the master branch, go down and select the context menu on the branch you wi
 Select "merge into current"
 Push into gitHub repository after merging.
 
-jxmjxmtest
-
-Yifan has zero taste
+Use java ArrayLists
+Use File object to detect files, and load them into a Scanner object. From there, pass the Scanner into a class constructor.
