@@ -6,8 +6,8 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Service {
-    Date service_date; //contains date and time
-    //Date receiving_date_time;
+    Date occurred_date; //Date and time service occurred
+    Date received_in_system; //Date and time service received into system
     String member_name;
     String provider_name;
     String service_name;
@@ -20,7 +20,8 @@ public class Service {
         //Populate Service class from scanner fileInput object
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         try {
-            service_date = formatter.parse(fileInput.nextLine());
+            occurred_date = formatter.parse(fileInput.nextLine());
+            received_in_system = formatter.parse(fileInput.nextLine());
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -38,7 +39,8 @@ public class Service {
     }
 
     public void printAll(){
-        System.out.println(service_date);
+        System.out.println(occurred_date);
+        System.out.println(received_in_system);
         System.out.println(member_name);
         System.out.println(provider_name);
         System.out.println(service_name);
