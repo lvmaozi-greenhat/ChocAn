@@ -22,5 +22,3 @@ Select "merge into current"
 Push into gitHub repository after merging.
 
 jxmjxmtest
-xiaomengbranch
-xiaomeng
