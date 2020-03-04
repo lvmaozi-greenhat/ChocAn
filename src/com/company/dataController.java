@@ -28,6 +28,7 @@ public class dataController {
         //Something similar will also be used for memberData and Service data
     }
 
-    //TODO: implement all of those
+
+
 
 }
