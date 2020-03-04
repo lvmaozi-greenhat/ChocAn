@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,6 +14,7 @@ public class memberData extends Data {
     //Contains a data structure of Service classes
         //Service classes indicate which services have been provided to the member
     //TODO: load in data from text files and load into objects
+    String memoryLocation;
     String name;
     int number;
     String address;
@@ -22,12 +24,13 @@ public class memberData extends Data {
     List<Service> services = new ArrayList<>();
 
     public memberData() {
-
+        //Default constructor: all set to null.
     }
 
     public static void main(String[] args) {
         //This is used to test random functions in the memberData class.
         File toSend = new File("member/1.txt");
+        /*
         Scanner tmpScan = null;
         try {
             tmpScan = new Scanner(toSend);
@@ -35,8 +38,10 @@ public class memberData extends Data {
             e.printStackTrace();
         }
 
-        assert tmpScan != null;
-        memberData tempData = new memberData(tmpScan);
+         */
+
+        //assert tmpScan != null;
+        memberData tempData = new memberData(toSend);
         tempData.printAll();
 
 
@@ -46,8 +51,23 @@ public class memberData extends Data {
         tempData2.printAll();
     }
 
-    public memberData(Scanner fileInput){
+    public memberData(File inputFile){
         //populates data files from file input
+        //memoryLocation = fileInput
+        try {
+            memoryLocation = inputFile.getCanonicalPath();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Scanner fileInput = null;
+        try {
+            fileInput = new Scanner(inputFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        assert fileInput != null;
         name = fileInput.nextLine();
         number = fileInput.nextInt();
         fileInput.nextLine();
@@ -68,6 +88,7 @@ public class memberData extends Data {
     }
 
     void fromUserInput(Scanner userInput){
+        //TODO: Sanitize user input
         System.out.println("Enter member name: ");
         name = userInput.nextLine();
 
@@ -90,6 +111,7 @@ public class memberData extends Data {
     }
 
     public void printAll(){
+        System.out.println(memoryLocation);
         System.out.println(name);
         System.out.println(number);
         System.out.println(address);
