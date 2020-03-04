@@ -19,4 +19,5 @@ From the master branch, go down and select the context menu on the branch you wi
 Select "merge into current"
 Push into gitHub repository after merging.
 
-Use java ArrayLists;
+Use java ArrayLists
+Use File object to detect files, and load them into a Scanner object. From there, pass the Scanner into a class constructor.
