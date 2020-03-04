@@ -30,17 +30,8 @@ public class memberData extends Data {
     public static void main(String[] args) {
         //This is used to test random functions in the memberData class.
         File toSend = new File("member/1.txt");
-        /*
-        Scanner tmpScan = null;
-        try {
-            tmpScan = new Scanner(toSend);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
 
-         */
 
-        //assert tmpScan != null;
         memberData tempData = new memberData(toSend);
         tempData.printAll();
 
@@ -126,5 +117,9 @@ public class memberData extends Data {
 
     void writeToFile(){
         //Writes to file
+    }
+
+    void addService(Service toAdd){
+        //add a new service to services arrayList
     }
 }
