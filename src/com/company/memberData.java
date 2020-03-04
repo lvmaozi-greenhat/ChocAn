@@ -21,6 +21,10 @@ public class memberData extends Data {
     int zip_code;
     List<Service> services = new ArrayList<>();
 
+    public memberData() {
+
+    }
+
     public static void main(String[] args) {
         //This is used to test random functions in the memberData class.
         File toSend = new File("member/1.txt");
@@ -34,6 +38,12 @@ public class memberData extends Data {
         assert tmpScan != null;
         memberData tempData = new memberData(tmpScan);
         tempData.printAll();
+
+
+        Scanner userInput = new Scanner(System.in);
+        memberData tempData2 = new memberData();
+        tempData2.fromUserInput(userInput);
+        tempData2.printAll();
     }
 
     public memberData(Scanner fileInput){
@@ -55,6 +65,28 @@ public class memberData extends Data {
                 services.add(newServ);
             }
         }
+    }
+
+    void fromUserInput(Scanner userInput){
+        System.out.println("Enter member name: ");
+        name = userInput.nextLine();
+
+        System.out.println("Enter ID Number: ");
+        number = userInput.nextInt();
+        userInput.nextLine();
+
+        System.out.println("Enter member street address: ");
+        address = userInput.nextLine();
+
+        System.out.println("Enter member city:");
+        city = userInput.nextLine();
+
+        System.out.println("Enter user state: ");
+        state = userInput.nextLine();
+
+        System.out.println("Enter member zip code: ");
+        zip_code = userInput.nextInt();
+        userInput.nextLine();
     }
 
     public void printAll(){
