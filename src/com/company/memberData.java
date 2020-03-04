@@ -103,6 +103,6 @@ public class memberData extends Data {
     }
 
     void writeToFile(){
-        //updates a field, then writes to file
+        //Writes to file
     }
 }
