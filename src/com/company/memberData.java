@@ -102,7 +102,7 @@ public class memberData extends Data {
         }
     }
 
-    void updateData(){
+    void writeToFile(){
         //updates a field, then writes to file
     }
 }
