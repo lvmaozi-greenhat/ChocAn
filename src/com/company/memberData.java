@@ -116,10 +116,14 @@ public class memberData extends Data {
     }
 
     void writeToFile(){
-        //Writes to file
+        //class writes itself to file
     }
 
     void addService(Service toAdd){
         //add a new service to services arrayList
+    }
+
+    void generateReport(File toWrite){
+        //generates a report into a file
     }
 }
