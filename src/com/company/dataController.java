@@ -30,7 +30,7 @@ public class dataController {
         //Load information from data/member.txt
         //Stores in Array list services
         members=new ArrayList<>();
-        File memberFile=new File("ChocAn/data/member.txt");
+        File memberFile=new File("data/member.txt");
         try{
             Scanner memberScanner=new Scanner(memberFile);
             while(memberScanner.hasNextLine()) {
@@ -43,7 +43,7 @@ public class dataController {
         //Load information from data/service.txt
         //Stores in Array list services
         services=new ArrayList<>();
-        File serviceFile=new File("ChocAn/data/service.txt");
+        File serviceFile=new File("data/service.txt");
         try{
             Scanner serviceScanner=new Scanner(serviceFile);
             while(serviceScanner.hasNext()){
@@ -57,7 +57,7 @@ public class dataController {
         //Load information from data/member.txt
         //Stores in Array list services
         providers=new ArrayList<>();
-        File providerFile=new File("ChocAn/data/provider.txt");
+        File providerFile=new File("data/provider.txt");
         try{
             Scanner providerScanner=new Scanner(providerFile);
             while(providerScanner.hasNextLine()) {
