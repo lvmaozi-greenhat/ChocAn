@@ -1,7 +1,4 @@
 package com.company;
-
-import java.util.ArrayList;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,12 +14,23 @@ public class dataController {
     ArrayList<Service> services;
     ArrayList<providerData> providers;
 
-    //Auto load all the information from external .txt file
+
     public dataController(){
+        members=new ArrayList<>();
+        services=new ArrayList<>();
+        providers=new ArrayList<>();
+        readMembers();
+        readProviders();
+        readServices();
+        addServiceToMember();
+        addServiceToProvide();
+    }
+    //Auto load all the information from external .txt file
+    public dataController(int a){
         //Load information from data/member.txt
         //Stores in Array list services
         members=new ArrayList<>();
-        File memberFile=new File("data/member.txt");
+        File memberFile=new File("ChocAn/data/member.txt");
         try{
             Scanner memberScanner=new Scanner(memberFile);
             while(memberScanner.hasNextLine()) {
@@ -35,7 +43,7 @@ public class dataController {
         //Load information from data/service.txt
         //Stores in Array list services
         services=new ArrayList<>();
-        File serviceFile=new File("data/service.txt");
+        File serviceFile=new File("ChocAn/data/service.txt");
         try{
             Scanner serviceScanner=new Scanner(serviceFile);
             while(serviceScanner.hasNext()){
@@ -49,7 +57,7 @@ public class dataController {
         //Load information from data/member.txt
         //Stores in Array list services
         providers=new ArrayList<>();
-        File providerFile=new File("data/provider.txt");
+        File providerFile=new File("ChocAn/data/provider.txt");
         try{
             Scanner providerScanner=new Scanner(providerFile);
             while(providerScanner.hasNextLine()) {
@@ -77,6 +85,63 @@ public class dataController {
             }
         }
     }
+    public void addServiceToMember(){
+        for(memberData member:members){
+            for(Service service:services){
+                if(service.member_id==member.number){   // check matching id
+                    member.services.add(service);       // If matched, then Add
+                }
+            }
+        }
+    }
+
+    public void addServiceToProvide(){
+        for(memberData member:members){
+            for(Service service:services){
+                if(service.member_id==member.number){   // check matching id
+                    member.services.add(service);       // If matched, then Add
+                }
+            }
+        }
+    }
+
+    public void readMembers(){
+        File memberFile=new File("ChocAn/data/member.txt");
+        try{
+            Scanner memberScanner=new Scanner(memberFile);
+            while(memberScanner.hasNextLine()) {
+                members.add(new memberData(memberScanner));
+            }
+        }catch(FileNotFoundException e){
+            e.fillInStackTrace();
+        }
+    }
+
+    public void readProviders(){
+        File providerFile=new File("ChocAn/data/provider.txt");
+        try{
+            Scanner providerScanner=new Scanner(providerFile);
+            while(providerScanner.hasNextLine()) {
+                providers.add(new providerData(providerScanner));
+            }
+        }catch(FileNotFoundException e){
+            e.fillInStackTrace();
+        }
+    }
+
+    public void readServices(){
+        File serviceFile=new File("ChocAn/data/service.txt");
+        try{
+            Scanner serviceScanner=new Scanner(serviceFile);
+            while(serviceScanner.hasNext()){
+                services.add(new Service(serviceScanner));
+            }
+
+        }catch(FileNotFoundException e){
+            e.fillInStackTrace();
+        }
+    }
+
 
     //Print member reports
     public void printMembers(){
