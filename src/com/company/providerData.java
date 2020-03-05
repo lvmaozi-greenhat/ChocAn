@@ -1,33 +1,39 @@
 package com.company;
-
+import java.util.List;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class providerData extends Data {
-    //Contains data read from provider files, and functions to write to correct files
-    //data public or protected
-    //contains data structure of service class
-        //this shows what services a provider can provide to a member
-        //function to add a service to a member?
-    //TODO: load in data from text files and load into objects
-
-    String name;
-    int id;
-    String address;
-    String city;
-    String state;
-    int zip_code;
-    List<Service> services;
     int n_consultations;
     double week_fees; //maybe unnecessary and should be calculated on the fly instead
 
-    public providerData(Scanner fileInput){
-        //populate fields from file input
+
+    public providerData(){
+        super();
+        n_consultations=000;
+        week_fees=88.88;
     }
 
-    void updateData(){
-        //updates a field, then writes to file
+    public providerData(Scanner fileInput){
+        super(fileInput);
+        n_consultations=000;
+        week_fees=88.88;
+    }
+
+    public void printAll(){
+        super.printAll();
+        if(services.isEmpty()==false) {
+            System.out.println("     |Services information|");
+            for (Service service : services) {
+                service.printAll();
+            }
+        }
+        else{
+            System.out.println("No services information");
+        }
+        System.out.println(n_consultations);
+        System.out.println(week_fees);
+        System.out.println("*******************  I am the line *******************");
     }
 }
-
-//test
