@@ -1,5 +1,3 @@
-package com.company;
-
 import java.util.Scanner;
 
 public class Interface {
@@ -55,6 +53,52 @@ public class Interface {
     }
 
     public void interactiveMode(Scanner userInput){
+        boolean active = true;
+        while(active) {
+            System.out.println("Interactive Mode");
+            System.out.println("1: Add new member into chocAn system");
+            System.out.println("2: delete member from chocAn system");
+            System.out.println("3: Update member records");
+            System.out.println("4: Add a new provider into chocAn system");
+            System.out.println("5: Change provider records");
+            System.out.println("H for help, Q to quit");
+            String in = userInput.nextLine();
+
+            switch (in){
+                case "1":
+                    //add new member
+                    break;
+
+                case "2":
+                    //delete member
+                    break;
+
+                case "3":
+                    //Update member info
+                    break;
+
+                case "4":
+                    //add new provider
+                    break;
+
+                case "5":
+                    //change provider records
+                    break;
+
+                case "h":
+                case "H":
+                    System.out.println("Help text");
+                    break;
+
+                case "q":
+                case "Q":
+                    active = false;
+                    break;
+
+                default:
+                    System.out.println("Incorrect input.");
+            }
+        }
 
     }
 
