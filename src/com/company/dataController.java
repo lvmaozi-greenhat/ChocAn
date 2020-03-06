@@ -1,4 +1,5 @@
 package com.company;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -106,7 +107,7 @@ public class dataController {
     }
 
     public void readMembers(){
-        File memberFile=new File("ChocAn/data/member.txt");
+        File memberFile=new File("data/member.txt");
         try{
             Scanner memberScanner=new Scanner(memberFile);
             while(memberScanner.hasNextLine()) {
@@ -118,7 +119,7 @@ public class dataController {
     }
 
     public void readProviders(){
-        File providerFile=new File("ChocAn/data/provider.txt");
+        File providerFile=new File("data/provider.txt");
         try{
             Scanner providerScanner=new Scanner(providerFile);
             while(providerScanner.hasNextLine()) {
@@ -130,7 +131,7 @@ public class dataController {
     }
 
     public void readServices(){
-        File serviceFile=new File("ChocAn/data/service.txt");
+        File serviceFile=new File("data/service.txt");
         try{
             Scanner serviceScanner=new Scanner(serviceFile);
             while(serviceScanner.hasNext()){
