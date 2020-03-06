@@ -113,9 +113,6 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -134,7 +131,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectId" id="1YkLMY1lvq5GwTSqABJqDhiMdEd" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -245,12 +245,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="839" y="429" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583481610546">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="839" y="429" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/62.0.1858.1080/1920.0.1920.1080@62.0.1858.1080" timestamp="1583481610546" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ChocAn.iml">
