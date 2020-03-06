@@ -1,3 +1,5 @@
+package com.company;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,9 +16,9 @@ public class providerData extends Data {
     }
 
     public providerData(Scanner fileInput){
-       super(fileInput);
-       n_consultations=000;
-       week_fees=88.88;
+        super(fileInput);
+        n_consultations=000;
+        week_fees=88.88;
     }
 
     public void printAll(){

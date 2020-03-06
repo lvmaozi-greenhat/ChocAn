@@ -1,3 +1,5 @@
+package com.company;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -157,10 +159,10 @@ public class dataController {
     }
 
     public void printProviders(){
-       for(providerData provider:providers){
+        for(providerData provider:providers){
             provider.printAll();
 
-       }
+        }
     }
 
     //Write either member/provider into their file
