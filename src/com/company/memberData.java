@@ -1,3 +1,4 @@
+package com.company;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,7 +8,7 @@ public class memberData extends Data{
         super();
     }
     public memberData(Scanner fileInput){
-       super(fileInput);
+        super(fileInput);
     }
     public void printAll(){
         super.printAll();
