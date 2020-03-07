@@ -68,6 +68,8 @@ public class Interface {
             System.out.println("3: Update member records");
             System.out.println("4: Add a new provider into chocAn system");
             System.out.println("5: Change provider records");
+            System.out.println("6: Change master service records");
+            System.out.println("7: Allow provider to accept a service");
             System.out.println("H for help, Q to quit");
             String in = userInput.nextLine();
 
@@ -85,7 +87,7 @@ public class Interface {
                         //dataController.printAllMembers()
 
                     //Select a member
-                        //tmpMember = dataController.selectMemberByID(); // returns member
+                        //tmpMember = dataController.selectMember(); // returns member
 
                     //delete a member
                         //dataController.deleteMember(tmpMember);
@@ -98,7 +100,7 @@ public class Interface {
                         //dataController.printAllMembers();
 
                     //select a member
-                        //tmp Member = dataController.selectMemberById(Scanner);
+                        //tmp Member = dataController.selectMember(Scanner);
 
                     //edit member info
                         //member.editInfo(scanner);
@@ -121,6 +123,36 @@ public class Interface {
                     //edit provider info
                         //provider.editInfo(scanner);
                     break;
+
+                case "6":
+                    //change master service records
+                    //print all services
+                        //dataController.printAllServices();
+                    //select a service
+                        //tmpService = dataController.selectService(scanner);
+                    //edit service info
+                        //service.editInfo(scanner);
+                    break;
+
+                case "7":
+                    //add a service to master service record
+                    //populate a tempService from user input
+                        //tempService = service(Scanner);
+                    //add tempService to dataController's service arrayList
+                        //dataController.addService(tempService);
+
+                case "8":
+                    //allow provider to provide a service
+                    //print all services
+                        //dataController.printAllServices();
+                    //select a service
+                        //tmpService = dataController.selectService(scanner);
+                    //print all providers
+                        //dataController.printAllProviders();
+                    //select a provider
+                        //tmpProvider = dataController.selectProvider(scanner);
+                    //add service to provider
+                        //provider.addService(tmpService);
 
                 case "h":
                 case "H":
@@ -147,19 +179,37 @@ public class Interface {
                 //dataController.printAllProviders();
             //select a provider
                 //tmpProvider = dataController.selectProvider(Scanner);
-            //edit provider info
-                //provider.editInfo(Scanner);
 
+            //Allow provider to add a service to a member
+            //print all members
+                //dataController.printAllMembers
+            //select temp member
+                //tempMember = dataController.selectMember(scanner);
+            //display all available services
+                //tmpProvider.displayAllServices();
+            //select a service
+                //provider.selectService(scanner);
+            //add service to member
+                //tempMember.addService(service);
     }
 
     public void managerMode(Scanner userInput){
-        //runs member reports
+        //runs member reports and provider reports
 
+        //member report:
         //print all members
             //dataController.printAllMembers();
         //ask to select a member
             //tmpMember = dataController.selectMember(Scanner);
         //write out report to some output.txt
             //member.writeReport(); , or member.writeReport(string fileName);
+
+        //provider report:
+        //print all providers
+            //dataController.printAllProviders();
+        //ask to select a provider
+            //tmpProvider / dataController.selectProvider(scanner);
+        //write out report to some output.txt
+            //provider.writeReport(); or provider.writeReport(string fileName);
     }
 }
