@@ -11,9 +11,13 @@ public class Main {
         data.printProviders();
         String memberFile="data/member.txt";
         String providerFile="data/provider.txt";
-  //      memberData m=new memberData();
+
+        String testFile="data/test.txt"; // path for Testing for writing
+        memberData m=new memberData();
+        providerData p=new providerData();
         //data.writeInfor(m,memberFile);
-        //data.writeInfor(m,providerFile);
+        data.writeInfor(m,testFile);
+        data.writeInfor(p,testFile);
  //       data.writeService(new Service(),"data/service.txt");
     }
 }
