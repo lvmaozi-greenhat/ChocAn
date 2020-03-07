@@ -1,23 +1,20 @@
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-       dataController data = new dataController();
-        data.printMembers();
-         data.printServices();
-        data.printProviders();
-        String memberFile="data/member.txt";
-        String providerFile="data/provider.txt";
+    public static void main(String[] args) {
+        dataController data = new dataController();
 
-        String testFile="data/test.txt"; // path for Testing for writing
-        memberData m=new memberData();
-        providerData p=new providerData();
+        Interface mainInput = new Interface(data);
+
+        mainInput.start();
+        //data.printMembers();
+        //data.printServices();
+        //data.printProviders();
+        //String memberFile="data/member.txt";
+        //String providerFile="data/provider.txt";
+        //      memberData m=new memberData();
         //data.writeInfor(m,memberFile);
-        data.writeInfor(m,testFile);
-        data.writeInfor(p,testFile);
- //       data.writeService(new Service(),"data/service.txt");
+        //data.writeInfor(m,providerFile);
+        //       data.writeService(new Service(),"data/service.txt");
+
     }
 }
