@@ -1,5 +1,3 @@
-package com.company;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,6 +14,7 @@ public class dataController {
     ArrayList<providerData> providers;
 
 
+    //Auto load all the information from external .txt file
     public dataController(){
         members=new ArrayList<>();
         services=new ArrayList<>();
@@ -26,66 +25,8 @@ public class dataController {
         addServiceToMember();
         addServiceToProvide();
     }
-    //Auto load all the information from external .txt file
-    public dataController(int a){
-        //Load information from data/member.txt
-        //Stores in Array list services
-        members=new ArrayList<>();
-        File memberFile=new File("data/member.txt");
-        try{
-            Scanner memberScanner=new Scanner(memberFile);
-            while(memberScanner.hasNextLine()) {
-                members.add(new memberData(memberScanner));
-            }
-        }catch(FileNotFoundException e){
-            e.fillInStackTrace();
-        }
 
-        //Load information from data/service.txt
-        //Stores in Array list services
-        services=new ArrayList<>();
-        File serviceFile=new File("data/service.txt");
-        try{
-            Scanner serviceScanner=new Scanner(serviceFile);
-            while(serviceScanner.hasNext()){
-                services.add(new Service(serviceScanner));
-            }
-
-        }catch(FileNotFoundException e){
-            e.fillInStackTrace();
-        }
-
-        //Load information from data/member.txt
-        //Stores in Array list services
-        providers=new ArrayList<>();
-        File providerFile=new File("data/provider.txt");
-        try{
-            Scanner providerScanner=new Scanner(providerFile);
-            while(providerScanner.hasNextLine()) {
-                providers.add(new providerData(providerScanner));
-            }
-        }catch(FileNotFoundException e){
-            e.fillInStackTrace();
-        }
-
-        // This foreach loop is to add services into specific provider
-        for(providerData provider:providers){
-            for(Service service:services){
-                if(service.member_id==provider.number){   // check matching id
-                    provider.services.add(service);       // If matched, then Add
-                }
-            }
-        }
-
-        // This foreach loop is to add services into specific member
-        for(memberData member:members){
-            for(Service service:services){
-                if(service.member_id==member.number){   // check matching id
-                    member.services.add(service);       // If matched, then Add
-                }
-            }
-        }
-    }
+   //To add service in to members
     public void addServiceToMember(){
         for(memberData member:members){
             for(Service service:services){
@@ -96,6 +37,7 @@ public class dataController {
         }
     }
 
+    //To add service in to providers
     public void addServiceToProvide(){
         for(memberData member:members){
             for(Service service:services){
@@ -106,6 +48,7 @@ public class dataController {
         }
     }
 
+    //Read members from data/member.txt
     public void readMembers(){
         File memberFile=new File("data/member.txt");
         try{
@@ -118,6 +61,8 @@ public class dataController {
         }
     }
 
+
+    //Read members from data/provider.txt
     public void readProviders(){
         File providerFile=new File("data/provider.txt");
         try{
@@ -130,6 +75,8 @@ public class dataController {
         }
     }
 
+
+    //Read services from data/service.txt
     public void readServices(){
         File serviceFile=new File("data/service.txt");
         try{
@@ -157,18 +104,18 @@ public class dataController {
             service.printAll();
         }
     }
-
+    //Print service information
     public void printProviders(){
-        for(providerData provider:providers){
+       for(providerData provider:providers){
             provider.printAll();
 
-        }
+       }
     }
 
     //Write either member/provider into their file
     //For member filename should be "data/member.txt"
     //For provider filename should be "data/provider.txt"
-    public void writeInfor(memberData m,String fileName){
+    public void writeInfor(Data m,String fileName){
         BufferedWriter bw;
         try {
             bw = new BufferedWriter(new FileWriter(fileName, true));

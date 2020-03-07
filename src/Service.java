@@ -1,4 +1,3 @@
-package com.company;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
@@ -15,26 +14,23 @@ public class Service {
     int service_id;
     double fee;
 
-    //Default constructor
-    public Service(){
-        String default_data="2020-02-02";
-        //    String default_data="Sun Feb 02 00:00:00 PST 2020";
-        try {
+//Default constructor
+   public Service(){
+       String default_data="2020-02-02";
+       try {
             occurred_date=new SimpleDateFormat("yyyy-MM-dd").parse(default_data);
-            received_in_system =new SimpleDateFormat("yyyy-MM-dd").parse(default_data);
-            //    occurred_date=new SimpleDateFormat("Sun Feb 02 00:00:00 PST 2020").parse(default_data);
-            //   received_in_system =new SimpleDateFormat("Sun Feb 02 00:00:00 PST 2020").parse(default_data);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        member_name="Default member name";
-        provider_name="Default provider name";
-        service_name="Default service name";
-        comments="Default comments";
-        member_id=123456789;
-        service_id=123456;
-        fee=99.99;
-    }
+           received_in_system =new SimpleDateFormat("yyyy-MM-dd").parse(default_data);
+       } catch (ParseException e) {
+           e.printStackTrace();
+       }
+       member_name="Default member name";
+       provider_name="Default provider name";
+       service_name="Default service name";
+       comments="Default comments";
+       member_id=123456789;
+       service_id=123456;
+       fee=99.99;
+   }
 
     //constructor load file
     public Service(Scanner fileInput){
@@ -70,7 +66,7 @@ public class Service {
         System.out.println();
     }
 
-    //Parts of service information for members
+   //Parts of service information for members
     public void printPart(){
         System.out.println(occurred_date);
         System.out.println(provider_name);
