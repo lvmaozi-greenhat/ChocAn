@@ -25,6 +25,7 @@ public class dataController {
         addServiceToProvide();
     }
     //Auto load all the information from external .txt file
+
     public dataController(int a){
         //Load information from data/member.txt
         //Stores in Array list services
@@ -84,6 +85,7 @@ public class dataController {
             }
         }
     }
+
     public void addServiceToMember(){
         for(memberData member:members){
             for(Service service:services){
