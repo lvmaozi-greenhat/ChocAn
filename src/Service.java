@@ -17,12 +17,9 @@ public class Service {
 //Default constructor
    public Service(){
        String default_data="2020-02-02";
-   //    String default_data="Sun Feb 02 00:00:00 PST 2020";
        try {
             occurred_date=new SimpleDateFormat("yyyy-MM-dd").parse(default_data);
            received_in_system =new SimpleDateFormat("yyyy-MM-dd").parse(default_data);
-       //    occurred_date=new SimpleDateFormat("Sun Feb 02 00:00:00 PST 2020").parse(default_data);
-        //   received_in_system =new SimpleDateFormat("Sun Feb 02 00:00:00 PST 2020").parse(default_data);
        } catch (ParseException e) {
            e.printStackTrace();
        }
