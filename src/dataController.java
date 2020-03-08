@@ -24,6 +24,7 @@ public class dataController {
         readServices();
         addServiceToMember();
         addServiceToProvide();
+        setProvidersNandFees();
     }
 
    //To add service in to members
@@ -39,10 +40,10 @@ public class dataController {
 
     //To add service in to providers
     public void addServiceToProvide(){
-        for(memberData member:members){
+        for(providerData provider:providers){
             for(Service service:services){
-                if(service.member_id==member.number){   // check matching id
-                    member.services.add(service);       // If matched, then Add
+                if(service.provider_id==provider.number){   // check matching id
+                    provider.services.add(service);       // If matched, then Add
                 }
             }
         }
@@ -115,7 +116,7 @@ public class dataController {
     //Write either member/provider into their file
     //For member filename should be "data/member.txt"
     //For provider filename should be "data/provider.txt"
-    public void writeInfor(Data m,String fileName){
+    public static void writeInfor(Data m,String fileName){
         BufferedWriter bw;
         try {
             bw = new BufferedWriter(new FileWriter(fileName, true));
@@ -138,7 +139,7 @@ public class dataController {
         }
     }
 
-    public void writeService(Service s,String fileName){
+    public static void writeService(Service s,String fileName){
         BufferedWriter bw;
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         try {
@@ -157,6 +158,8 @@ public class dataController {
             bw.append("\n");
             bw.append(Integer.toString(s.member_id));
             bw.append("\n");
+            bw.append(Integer.toString(s.provider_id));
+            bw.append("\n");
             bw.append(Integer.toString(s.service_id));
             bw.append("\n");
             bw.append(Double.toString(s.fee));
@@ -165,6 +168,12 @@ public class dataController {
         }
         catch(Exception x) {
             System.out.println("File writing error.");
+        }
+    }
+
+    void setProvidersNandFees(){
+        for(providerData provide : providers){
+           provide.CalculateNandFees();
         }
     }
 }

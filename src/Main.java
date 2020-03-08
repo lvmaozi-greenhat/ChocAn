@@ -6,6 +6,13 @@ public class Main {
         Interface mainInput = new Interface(data);
 
         mainInput.start();
+       // data.printServices();
+        //data.printProviders();
+        //data.printMembers();
+
+
+
+
         //data.printMembers();
         //data.printServices();
         //data.printProviders();
