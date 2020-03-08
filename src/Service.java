@@ -11,6 +11,7 @@ public class Service {
     String service_name;
     String comments; //OPTIONAL
     int member_id;
+    int provider_id;
     int service_id;
     double fee;
 
@@ -28,6 +29,7 @@ public class Service {
        service_name="Default service name";
        comments="Default comments";
        member_id=123456789;
+       provider_id=987654321;
        service_id=123456;
        fee=99.99;
    }
@@ -47,6 +49,7 @@ public class Service {
         service_name = fileInput.nextLine();
         comments = fileInput.nextLine();
         member_id = fileInput.nextInt();
+        provider_id=fileInput.nextInt();
         service_id = fileInput.nextInt();
         fee = fileInput.nextDouble();
         fileInput.nextLine();
@@ -61,6 +64,7 @@ public class Service {
         System.out.println(service_name);
         System.out.println(comments);
         System.out.println(member_id);
+        System.out.println(provider_id);
         System.out.println(service_id);
         System.out.println(fee);
         System.out.println();
