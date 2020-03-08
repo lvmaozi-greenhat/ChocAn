@@ -61,4 +61,8 @@ public class Data {
     public boolean isMatch(String other){
         return this.name==other;
     }
+
+    public void setData(){
+        //米哥 让用户输入 然后把所有数据重新设一遍 除了 （services list 重的data）
+    }
 }

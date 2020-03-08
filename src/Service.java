@@ -76,4 +76,17 @@ public class Service {
         System.out.println(provider_name);
         System.out.println(service_name);
     }
+
+    public boolean isMatch(Service other){
+      return this.service_id==other.service_id;
+    }
+
+    public boolean isMathch(int service_id){
+       return this.service_id==service_id;
+    }
+
+    public void setService(){
+       //米哥
+        //让用户输入 把所有数据重新设一遍
+    }
 }
