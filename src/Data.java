@@ -38,8 +38,6 @@ public class Data {
         fileInput.nextLine();
         services = new ArrayList<>();
     }
-
-
     //Print All function
     public void printAll(){
         System.out.println(name);
@@ -49,5 +47,10 @@ public class Data {
         System.out.println(state);
         System.out.println(zip_code);
         System.out.println();
+    }
+
+    //To compare Match or not
+    public boolean isMatch(Data other){
+        return this.number==other.number;
     }
 }
