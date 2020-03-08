@@ -167,15 +167,15 @@ public class dataController {
     //writes all data to files, happens when program quits.
     public void writeAll (String filename1,String filename2, String filename3) throws IOException {
 
-        File file1 = new File("data/" +filename1);
-        File file2 = new File("data/"+filename2);
-        File file3 = new File("data/"+filename3);
+        File file1 = new File(filename1);
+        File file2 = new File(filename2);
+        File file3 = new File(filename3);
+
+        System.gc();
 
         if(file1.exists() && file2.exists() && file3.exists()) {
             if (file1.delete() && file2.delete() && file3.delete()) {
-                System.out.println(file1.getName() + " DELETED");
-                System.out.println(file2.getName() + " DELETED");
-                System.out.println(file3.getName() + " DELETED");
+                System.out.println(" DELETED");
             } else {
                 System.out.println("Failed Deleted");
             }
