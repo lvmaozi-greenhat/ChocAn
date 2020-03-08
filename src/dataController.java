@@ -116,7 +116,7 @@ public class dataController {
     //Write either member/provider into their file
     //For member filename should be "data/member.txt"
     //For provider filename should be "data/provider.txt"
-    public void writeInfor(Data m,String fileName){
+    public static void writeInfor(Data m,String fileName){
         BufferedWriter bw;
         try {
             bw = new BufferedWriter(new FileWriter(fileName, true));
@@ -139,7 +139,7 @@ public class dataController {
         }
     }
 
-    public void writeService(Service s,String fileName){
+    public static void writeService(Service s,String fileName){
         BufferedWriter bw;
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         try {

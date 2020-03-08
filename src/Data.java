@@ -61,8 +61,12 @@ public class Data {
     public boolean isMatch(String other){
         return this.name==other;
     }
-    
-    public void setData(){
+
+    public void setData(Scanner userInput){
         //米哥 让用户输入 然后把所有数据重新设一遍 除了 （services list 重的data）
+    }
+
+    public void editInfor(Scanner userInput){
+//米哥 让用户输入 然后把修改数据 除了 （services list 重的data）
     }
 }
