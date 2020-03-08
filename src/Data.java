@@ -50,7 +50,23 @@ public class Data {
     }
 
     //To compare Match or not
-    public boolean isMatch(Data other){
-        return this.number==other.number;
+    public boolean isMatch(Data other) {
+        return this.number == other.number;
+    }
+
+    public boolean isMatch(int other){
+        return this.number==other;
+    }
+
+    public boolean isMatch(String other){
+        return this.name==other;
+    }
+
+    public void setData(Scanner userInput){
+        //米哥 让用户输入 然后把所有数据重新设一遍 除了 （services list 重的data）
+    }
+
+    public void editInfor(Scanner userInput){
+//米哥 让用户输入 然后把修改数据 除了 （services list 重的data）
     }
 }

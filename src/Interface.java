@@ -76,7 +76,7 @@ public class Interface {
             switch (in){
                 case "1":
                     //add new member
-                    //constructor member(Scanner userInput);
+                    //new_member.setData(Scanner userInput);
                     //mainController.addMember(member);
                     break;
 
