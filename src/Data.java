@@ -50,7 +50,15 @@ public class Data {
     }
 
     //To compare Match or not
-    public boolean isMatch(Data other){
-        return this.number==other.number;
+    public boolean isMatch(Data other) {
+        return this.number == other.number;
+    }
+
+    public boolean isMatch(int other){
+        return this.number==other;
+    }
+
+    public boolean isMatch(String other){
+        return this.name==other;
     }
 }
