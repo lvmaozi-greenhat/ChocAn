@@ -88,6 +88,10 @@ public class Service {
        return this.service_id==service_id;
     }
 
+    public boolean isMatch(String service_name){
+        return this.service_name == service_name;
+    }
+
     public void setService(Scanner userInput){
        //米哥
         //让用户输入 把所有数据重新设一遍
