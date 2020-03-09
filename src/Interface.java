@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Interface {
@@ -18,7 +19,7 @@ public class Interface {
             System.out.println("1: Interactive Mode");
             System.out.println("2: Provider Mode");
             System.out.println("3: Manager Mode");
-            System.out.println("H for help, Q to quit. Q! to quit without writing");
+            System.out.println("H for help, Q to quit. QQ to quit without writing");
             String in = userInput.nextLine();
 
             switch (in) {
@@ -42,12 +43,17 @@ public class Interface {
 
                 case "q":
                 case "Q":
-                    //dataController.writeAll();
+                    try {
+                        mainController.writeAll("testWriteData/member.txt", "testWriteData/provider.txt", "testWriteData/service.txt");
+                        //TODO: Change testWriteData/ to data/ in final release
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     active = false;
                     break;
 
-                case "q!":
-                case "Q!":
+                case "qq":
+                case "QQ":
                     active = false;
                     break;
 
@@ -70,13 +76,14 @@ public class Interface {
             System.out.println("5: Change provider records");
             System.out.println("6: Change master service records");
             System.out.println("7: Allow provider to accept a service");
+            System.out.println("8: Find Provider and Service from array list");
             System.out.println("H for help, Q to quit");
             String in = userInput.nextLine();
 
             switch (in){
                 case "1":
                     //add new member
-                    //constructor member(Scanner userInput);
+                    //new_member.setData(Scanner userInput);
                     //mainController.addMember(member);
                     break;
 
@@ -149,10 +156,34 @@ public class Interface {
                         //tmpService = dataController.selectService(scanner);
                     //print all providers
                         //dataController.printAllProviders();
-                    //select a provider
-                        //tmpProvider = dataController.selectProvider(scanner);
-                    //add service to provider
-                        //provider.addService(tmpService);
+
+                    //************* select a provider **************
+                   System.out.println("Input provider name");
+
+                   dataController tmpProvider = new dataController();
+                   providerData find = new providerData();
+                   find = tmpProvider.selectProvider(userInput);
+
+                   if(find != null) {
+                       find.printAll();
+                   }
+                   else
+                       System.out.println("Cannot find");
+
+                    //*********** add service to provider ************
+                    System.out.println("Input service name");
+
+                    dataController tmpService = new dataController();
+                    Service findService = new Service();
+                    findService = tmpService.selectService(userInput);
+
+                    if(findService != null) {
+                        findService.printAll();
+                    }
+                    else
+                        System.out.println("Cannot find");
+
+                    break;
 
                 case "h":
                 case "H":
