@@ -85,6 +85,9 @@ public class Interface {
                     //add new member
                     //new_member.setData(Scanner userInput);
                     //mainController.addMember(member);
+                    memberData toAdd = new memberData();
+                    toAdd.setData(userInput);
+                    mainController.addMember(toAdd);
                     break;
 
                 case "2":
