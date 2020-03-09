@@ -36,10 +36,10 @@ public class dataController {
 
     //To add service in to providers
     public void addServiceToProvide() {
-        for (memberData member : members) {
-            for (Service service : services) {
-                if (service.member_id == member.number) {   // check matching id
-                    member.services.add(service);       // If matched, then Add
+        for (providerData provider : providers) {
+            for (Service service:services) {
+                if (service.provider_id == provider.number) {   // check matching id
+                    provider.services.add(service);       // If matched, then Add
                 }
             }
         }
