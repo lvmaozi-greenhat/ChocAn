@@ -88,14 +88,22 @@ public class Service {
        return this.service_id==service_id;
     }
 
-    public void setService(Scanner userInput){
+    public void setService(Scanner userInput) {
        //米哥
         //让用户输入 把所有数据重新设一遍
         if(userInput.hasNextLine()) {
-            this.occurred_date = new SimpleDateFormat("yyyy-MM-dd").parse(userInput.nextLine());
+            try {
+                this.occurred_date = new SimpleDateFormat("yyyy-MM-dd").parse(userInput.nextLine());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
         if(userInput.hasNextLine()) {
-            this.received_in_system = new SimpleDateFormat("yyyy-MM-dd").parse(userInput.nextLine());
+            try {
+                this.received_in_system = new SimpleDateFormat("yyyy-MM-dd").parse(userInput.nextLine());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
         System.out.println("Enter the name of member:");
         if(userInput.hasNextLine()) {
@@ -133,8 +141,7 @@ public class Service {
 
     public void editInfor(Scanner userInput){
       //用户修改数据
-        //TODO: Remove new Scanner below
-        userInput = new Scanner(System.in);
+        //userInput = new Scanner(System.in);
         do{
             System.out.println("Do you want to update the information? Y/N");
             setService(userInput);

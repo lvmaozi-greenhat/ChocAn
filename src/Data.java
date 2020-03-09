@@ -93,9 +93,8 @@ public class Data {
 
     public void editInfor(Scanner userInput){
         //米哥 让用户输入 然后把修改数据 除了 （services list 重的data）
-        //TODO: Remove line below
 
-        userInput = new Scanner(System.in);
+        //userInput = new Scanner(System.in);
         do{
             System.out.println("Do you want to update the information? Y/N");
             setData(userInput);
