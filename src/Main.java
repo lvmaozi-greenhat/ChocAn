@@ -3,12 +3,13 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         dataController data = new dataController();
 
-        //Interface mainInput = new Interface(data);
 
-        //mainInput.start();
+        Interface mainInput = new Interface(data);
+
+        mainInput.start();
 
         //data.printMembers();
         //data.printServices();

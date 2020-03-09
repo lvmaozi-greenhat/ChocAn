@@ -137,7 +137,7 @@ public class dataController {
 
     public void writeService(Service s, String fileName) {
         BufferedWriter bw;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         try {
             bw = new BufferedWriter(new FileWriter(fileName, true));
             bw.append(sdf.format(s.occurred_date));
@@ -154,6 +154,8 @@ public class dataController {
             bw.append("\n");
             bw.append(Integer.toString(s.member_id));
             bw.append("\n");
+            bw.append(Integer.toString(s.provider_id));
+            bw.append("\n");
             bw.append(Integer.toString(s.service_id));
             bw.append("\n");
             bw.append(Double.toString(s.fee));
@@ -165,7 +167,7 @@ public class dataController {
     }
 
     //writes all data to files, happens when program quits.
-    public void writeAll (String filename1,String filename2, String filename3) throws IOException {
+    public void writeAll(String filename1, String filename2, String filename3) throws IOException {
 
         File file1 = new File(filename1);
         File file2 = new File(filename2);
