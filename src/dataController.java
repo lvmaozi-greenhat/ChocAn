@@ -228,4 +228,32 @@ public class dataController {
     {
         members.remove(obj);
     }
+
+    //adds a provider object into dataController's arrayList
+    void addProvider(providerData newProvider) {
+        providers.add(newProvider);
+    }
+
+    //returns a provider inside of dataController from user input
+    providerData selectProvider(Scanner providerName) {
+        String find = providerName.nextLine();
+        for (providerData provider : providers) {
+            if (provider.isMatch(find)) {
+                return provider;
+            }
+        }
+        return null;
+    }
+
+    //returns a service inside of dataController from user input
+    Service selectService(Scanner serviceName) {
+        String find = serviceName.nextLine();
+        for (Service servicer : services) {
+            if (servicer.isMatch(find)) {
+                return servicer;
+            }
+        }
+        return null;
+    }
+
 }
