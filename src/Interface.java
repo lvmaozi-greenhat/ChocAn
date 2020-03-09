@@ -160,9 +160,9 @@ public class Interface {
                     //************* select a provider **************
                    System.out.println("Input provider name");
 
-                   dataController tmpProvider = new dataController();
-                   providerData find = new providerData();
-                   find = tmpProvider.selectProvider(userInput);
+                   //dataController tmpProvider = new dataController();
+                   providerData find;
+                   find = mainController.selectProvider(userInput);
 
                    if(find != null) {
                        find.printAll();
@@ -174,7 +174,7 @@ public class Interface {
                     System.out.println("Input service name");
 
                     dataController tmpService = new dataController();
-                    Service findService = new Service();
+                    Service findService;
                     findService = tmpService.selectService(userInput);
 
                     if(findService != null) {
