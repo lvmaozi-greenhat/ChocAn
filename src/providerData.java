@@ -34,4 +34,18 @@ public class providerData extends Data {
         System.out.println(week_fees);
         System.out.println("*******************  I am the line *******************");
     }
+
+    public void CalculateNandFees(){
+       if(services.isEmpty()==false){
+          for(Service service : services){
+              this.week_fees+=service.fee;
+          }
+          this.n_consultations=services.size();
+       }
+       else{
+           this.n_consultations=0;
+           this.week_fees=0;
+       }
+    }
+
 }
