@@ -78,6 +78,8 @@ public class Interface {
             System.out.println("7: Allow provider to accept a service");
             System.out.println("8: Find Provider and Service from array list");
             System.out.println("H for help, Q to quit");
+            memberData tmpMember;
+            providerData tmpProvider = new providerData();
             String in = userInput.nextLine();
 
             switch (in){
@@ -102,7 +104,7 @@ public class Interface {
                     //delete a member
                         //dataController.deleteMember(tmpMember);
                     mainController.printMembers();
-                    memberData tmpMember = mainController.selectMember(userInput);
+                    tmpMember = mainController.selectMember(userInput);
                     mainController.deleteMember(tmpMember);
                     break;
 
@@ -117,6 +119,10 @@ public class Interface {
 
                     //edit member info
                         //member.editInfo(scanner);
+                    mainController.printMembers();
+                    tmpMember = mainController.selectMember(userInput);
+                    mainController.deleteMember(tmpMember);
+
                     break;
 
                 case "4":
@@ -124,6 +130,8 @@ public class Interface {
 
                     //tmpProvider = new provider(scanner);
                     //dataController.addProvider(tmpProvider);
+                    tmpProvider.setData(userInput);
+                    mainController.addProvider(tmpProvider);
                     break;
 
                 case "5":
@@ -135,6 +143,7 @@ public class Interface {
                         //tmpProvider = dataController.selectProvider(Scanner);
                     //edit provider info
                         //provider.editInfo(scanner);
+
                     break;
 
                 case "6":
