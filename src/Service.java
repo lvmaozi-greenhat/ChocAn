@@ -95,9 +95,60 @@ public class Service {
     public void setService(Scanner userInput){
        //米哥
         //让用户输入 把所有数据重新设一遍
+        if(userInput.hasNextLine()) {
+            try {
+                this.occurred_date = new SimpleDateFormat("yyyy-MM-dd").parse(userInput.nextLine());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        if(userInput.hasNextLine()) {
+            try {
+                this.received_in_system = new SimpleDateFormat("yyyy-MM-dd").parse(userInput.nextLine());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Enter the name of member:");
+        if(userInput.hasNextLine()) {
+            this.member_name = userInput.nextLine();
+        }
+        System.out.println("Enter the name of provider:");
+        if(userInput.hasNextLine()) {
+            this.provider_name = userInput.nextLine();
+        }
+        System.out.println("Enter the name of service:");
+        if(userInput.hasNextLine()) {
+            this.service_name = userInput.nextLine();
+        }
+        System.out.println("Enter the comments:");
+        if(userInput.hasNextLine()) {
+            this.comments = userInput.nextLine();
+        }
+        System.out.println("Enter the member'id:");
+        if(userInput.hasNextLine()) {
+            this.member_id = Integer.parseInt(userInput.nextLine());
+        }
+        System.out.println("Enter the provider id number:");
+        if(userInput.hasNextLine()) {
+            this.provider_id =  Integer.parseInt(userInput.nextLine());
+        }
+        System.out.println("Enter the service id number:");
+        if(userInput.hasNextLine()) {
+            this.service_id =  Integer.parseInt(userInput.nextLine());
+        }
+        System.out.println("Enter the fee that need to pay:");
+        if(userInput.hasNextLine()) {
+            this.fee =  Double.parseDouble(userInput.nextLine());
+        }
     }
 
     public void editInfor(Scanner userInput){
       //用户修改数据
+        //userInput = new Scanner(System.in);
+        do{
+            System.out.println("Do you want to update the information? Y/N");
+            setService(userInput);
+        }while(userInput.next().equalsIgnoreCase("Y"));
     }
 }
