@@ -101,6 +101,9 @@ public class Interface {
 
                     //delete a member
                         //dataController.deleteMember(tmpMember);
+                    mainController.printMembers();
+                    memberData tmpMember = mainController.selectMember(userInput);
+                    mainController.deleteMember(tmpMember);
                     break;
 
                 case "3":
