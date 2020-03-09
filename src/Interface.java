@@ -76,6 +76,7 @@ public class Interface {
             System.out.println("5: Change provider records");
             System.out.println("6: Change master service records");
             System.out.println("7: Allow provider to accept a service");
+            System.out.println("8: Find Provider and Service from array list");
             System.out.println("H for help, Q to quit");
             String in = userInput.nextLine();
 
@@ -155,10 +156,34 @@ public class Interface {
                         //tmpService = dataController.selectService(scanner);
                     //print all providers
                         //dataController.printAllProviders();
-                    //select a provider
-                        //tmpProvider = dataController.selectProvider(scanner);
-                    //add service to provider
-                        //provider.addService(tmpService);
+
+                    //************* select a provider **************
+                   System.out.println("Input provider name");
+
+                   dataController tmpProvider = new dataController();
+                   providerData find = new providerData();
+                   find = tmpProvider.selectProvider(userInput);
+
+                   if(find != null) {
+                       find.printAll();
+                   }
+                   else
+                       System.out.println("Cannot find");
+
+                    //*********** add service to provider ************
+                    System.out.println("Input service name");
+
+                    dataController tmpService = new dataController();
+                    Service findService = new Service();
+                    findService = tmpService.selectService(userInput);
+
+                    if(findService != null) {
+                        findService.printAll();
+                    }
+                    else
+                        System.out.println("Cannot find");
+
+                    break;
 
                 case "h":
                 case "H":

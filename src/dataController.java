@@ -235,25 +235,25 @@ public class dataController {
     }
 
     //returns a provider inside of dataController from user input
-    providerData selectProvider(String providerName) {
-        providerData find = new providerData();
+    providerData selectProvider(Scanner providerName) {
+        String find = providerName.nextLine();
         for (providerData provider : providers) {
-            if (provider.isMatch(providerName) == true) {
-                find = provider;
+            if (provider.isMatch(find)) {
+                return provider;
             }
         }
-        return find;
+        return null;
     }
 
     //returns a service inside of dataController from user input
-    Service selectService(String serviceName) {
-        Service find = new Service();
+    Service selectService(Scanner serviceName) {
+        String find = serviceName.nextLine();
         for (Service servicer : services) {
-            if (servicer.isMatch(serviceName) == true) {
-                find = servicer;
+            if (servicer.isMatch(find)) {
+                return servicer;
             }
         }
-        return find;
+        return null;
     }
 
 }

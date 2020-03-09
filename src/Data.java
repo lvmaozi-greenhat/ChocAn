@@ -58,10 +58,10 @@ public class Data {
         return this.number==other;
     }
 
-    public boolean isMatch(String other){
-        return this.name==other;
-    }
+    public boolean isMatch(String name) {
+        return this.name.equals(name);
 
+    }
     public void setData(Scanner userInput){
         //米哥 让用户输入 然后把所有数据重新设一遍 除了 （services list 重的data）
     }

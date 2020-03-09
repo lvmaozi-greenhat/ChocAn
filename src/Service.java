@@ -89,7 +89,7 @@ public class Service {
     }
 
     public boolean isMatch(String service_name){
-        return this.service_name == service_name;
+        return this.service_name.equals(service_name);
     }
 
     public void setService(Scanner userInput){

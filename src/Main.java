@@ -1,14 +1,9 @@
-import java.io.IOException;
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         dataController data = new dataController();
-
-
         Interface mainInput = new Interface(data);
-
         mainInput.start();
 
         //data.printMembers();
@@ -28,7 +23,6 @@ public class Main {
         data2.printMembers();
         data2.printServices();
         data2.printProviders();
-
 
         Scanner input=new Scanner(System.in);
         memberData obj = new memberData();
