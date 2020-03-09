@@ -49,8 +49,11 @@ public class Service {
         service_name = fileInput.nextLine();
         comments = fileInput.nextLine();
         member_id = fileInput.nextInt();
+        fileInput.nextLine();
         provider_id=fileInput.nextInt();
+        fileInput.nextLine();
         service_id = fileInput.nextInt();
+        fileInput.nextLine();
         fee = fileInput.nextDouble();
         fileInput.nextLine();
     }

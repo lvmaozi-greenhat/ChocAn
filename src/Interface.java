@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Interface {
@@ -18,7 +19,7 @@ public class Interface {
             System.out.println("1: Interactive Mode");
             System.out.println("2: Provider Mode");
             System.out.println("3: Manager Mode");
-            System.out.println("H for help, Q to quit. Q! to quit without writing");
+            System.out.println("H for help, Q to quit. QQ to quit without writing");
             String in = userInput.nextLine();
 
             switch (in) {
@@ -42,12 +43,17 @@ public class Interface {
 
                 case "q":
                 case "Q":
-                    //dataController.writeAll();
+                    try {
+                        mainController.writeAll("testWriteData/member.txt", "testWriteData/provider.txt", "testWriteData/service.txt");
+                        //TODO: Change testWriteData/ to data/ in final release
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     active = false;
                     break;
 
-                case "q!":
-                case "Q!":
+                case "qq":
+                case "QQ":
                     active = false;
                     break;
 
