@@ -59,7 +59,7 @@ public class Data {
     }
 
     public boolean isMatch(String other){
-        return this.name==other;
+        return this.name.equals(other);
     }
 
     public void setData(Scanner userInput){
