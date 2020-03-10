@@ -44,7 +44,7 @@ public class Interface {
                 case "q":
                 case "Q":
                     try {
-                        mainController.writeAll("testWriteData/member.txt", "testWriteData/provider.txt", "testWriteData/service.txt");
+                        mainController.writeAll("Data/member.txt", "Data/provider.txt", "Data/service.txt");
                         //TODO: Change testWriteData/ to data/ in final release
                     } catch (IOException e) {
                         e.printStackTrace();

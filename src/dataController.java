@@ -213,7 +213,9 @@ public class dataController {
     //returns a member inside of dataController from user input
     public memberData selectMember(Scanner input)
     {
+        //TODO: Edit for user friendlyness
         int toFind = input.nextInt();
+        input.nextLine();
         for(memberData member : members)
         {
             if(member.number==toFind)
@@ -239,6 +241,7 @@ public class dataController {
 
     //returns a provider inside of dataController from user input
     providerData selectProvider(Scanner providerName) {
+        //TODO: Revise for user friendlyness
         String find = providerName.nextLine();
         for (providerData provider : providers) {
             if (provider.isMatch(find)) {
@@ -250,6 +253,7 @@ public class dataController {
 
     //returns a service inside of dataController from user input
     Service selectService(Scanner serviceName) {
+        //TODO: Revise for user friendlyness
         String find = serviceName.nextLine();
         for (Service servicer : services) {
             if (servicer.isMatch(find)) {

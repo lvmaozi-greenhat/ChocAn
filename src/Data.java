@@ -93,12 +93,49 @@ public class Data {
 
     public void editInfor(Scanner userInput){
         //米哥 让用户输入 然后把修改数据 除了 （services list 重的data）
+        System.out.println("What would you like to edit?");
+        System.out.println("1: Name");
+        System.out.println("2: Address");
+        System.out.println("3: City");
+        System.out.println("4: State");
+        System.out.println("5: Zip Code");
+        System.out.println("Q: quit");
+        String in = userInput.nextLine();
 
-        //userInput = new Scanner(System.in);
-        do{
-            System.out.println("Do you want to update the information? Y/N");
-            setData(userInput);
-        }while(userInput.next().equalsIgnoreCase("Y"));
+        switch(in) {
+            case "1":
+                System.out.println("Enter a new name");
+                String newName = userInput.nextLine();
+                name = newName;
+                break;
+            case "2":
+                System.out.println("Enter a new address");
+                String newAddress = userInput.nextLine();
+                address = newAddress;
+                break;
+            case "3":
+                System.out.println("Enter a new city");
+                String newCity = userInput.nextLine();
+                city = newCity;
+                break;
+            case "4":
+                System.out.println("Enter a new state");
+                String newState = userInput.nextLine();
+                state = newState;
+                break;
+            case "5":
+                System.out.println("Enter a new Zip Code");
+                int newZip = userInput.nextInt();
+                userInput.nextLine();
+                zip_code = newZip;
+                break;
+            case "q":
+            case "Q":
+                break;
+
+            default:
+                System.out.println("Incorrect Input!");
+        }
     }
 
     public Service selectService(Scanner userInput) {
