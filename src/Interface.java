@@ -75,8 +75,8 @@ public class Interface {
             System.out.println("4: Add a new provider into chocAn system");
             System.out.println("5: Change provider records");
             System.out.println("6: Change master service records");
-            System.out.println("7: Allow provider to accept a service");
-            System.out.println("8: Find Provider and Service from array list");
+            //System.out.println("7: Allow provider to accept a service");
+            //System.out.println("8: Find Provider and Service from array list");
             System.out.println("H for help, Q to quit");
             memberData tmpMember;
             providerData tmpProvider = new providerData();
@@ -162,7 +162,7 @@ public class Interface {
                     tmpService = mainController.selectService(userInput);
                     tmpService.editInfor(userInput);
                     break;
-
+/*
                 case "7":
                     //add a service to master service record
                     //populate a tempService from user input
@@ -211,7 +211,7 @@ public class Interface {
                         System.out.println("Cannot find");
 
                     break;
-
+*/
                 case "h":
                 case "H":
                     //will need to be filled out later
@@ -249,9 +249,9 @@ public class Interface {
                     System.out.println("Select a member:");
                     memberData tmpMember = mainController.selectMember(userInput);
                     tmpProvider.printAll();
-                    System.out.println("Select a service:");
-                    Service tmpService = tmpProvider.selectService(userInput);
-                    tmpMember.addService(tmpService);
+                    System.out.println("Add a service to the member:");
+                    Service tmpService = new Service(tmpProvider, tmpMember, userInput);
+                    mainController.addService(tmpService);
                     break;
 
                 case "q":

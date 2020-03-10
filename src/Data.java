@@ -65,27 +65,27 @@ public class Data {
     public void setData(Scanner userInput){
         //米哥 让用户输入 然后把所有数据重新设一遍 除了 （services list 重的data）
 
-        System.out.println("Please enter the name of member:");
+        System.out.println("Please enter a name");
         if(userInput.hasNextLine()) {
             this.name = userInput.nextLine();
         }
-        System.out.println("Please enter number:");
+        System.out.println("Please enter ID number:");
         if(userInput.hasNextLine()) {
             this.number = Integer.parseInt(userInput.nextLine());
         }
-        System.out.println("Please enter the address:");
+        System.out.println("Please enter address:");
         if(userInput.hasNextLine()) {
             this.address = userInput.nextLine();
         }
-        System.out.println("Please enter the city that you living:");
+        System.out.println("Please enter address city");
         if(userInput.hasNextLine()) {
             this.city = userInput.nextLine();
         }
-        System.out.println("Please enter the state:");
+        System.out.println("Please enter state:");
         if(userInput.hasNextLine()) {
             this.state = userInput.nextLine();
         }
-        System.out.println("Please enter the zip code:");
+        System.out.println("Please enter zip code:");
         if(userInput.hasNextLine()) {
             this.zip_code =  Integer.parseInt(userInput.nextLine());
         }
