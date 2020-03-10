@@ -137,17 +137,4 @@ public class Data {
                 System.out.println("Incorrect Input!");
         }
     }
-
-    public Service selectService(Scanner userInput) {
-        //select a service from data arrayList and return
-        //TODO: Implement
-        //null service
-        Service tmpServe = new Service();
-        return tmpServe;
-    }
-
-    public void addService(Service tmpService) {
-        //add a service to data class arrayList
-        //TODO: Implement
-    }
 }
