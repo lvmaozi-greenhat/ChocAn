@@ -80,6 +80,7 @@ public class Interface {
             System.out.println("H for help, Q to quit");
             memberData tmpMember;
             providerData tmpProvider = new providerData();
+            Service tmpService = new Service();
             String in = userInput.nextLine();
 
             switch (in){
@@ -143,6 +144,9 @@ public class Interface {
                         //tmpProvider = dataController.selectProvider(Scanner);
                     //edit provider info
                         //provider.editInfo(scanner);
+                    mainController.printProviders();
+                    tmpProvider = mainController.selectProvider(userInput);
+                    tmpProvider.editInfor(userInput);
 
                     break;
 
@@ -154,6 +158,9 @@ public class Interface {
                         //tmpService = dataController.selectService(scanner);
                     //edit service info
                         //service.editInfo(scanner);
+                    mainController.printServices();
+                    tmpService = mainController.selectService(userInput);
+                    tmpService.editInfor(userInput);
                     break;
 
                 case "7":
@@ -162,6 +169,8 @@ public class Interface {
                         //tempService = service(Scanner);
                     //add tempService to dataController's service arrayList
                         //dataController.addService(tempService);
+                    tmpService.editInfor(userInput);
+                    mainController.addService(tmpService);
 
                 case "8":
                     //allow provider to provide a service
@@ -171,6 +180,8 @@ public class Interface {
                         //tmpService = dataController.selectService(scanner);
                     //print all providers
                         //dataController.printAllProviders();
+
+                    mainController.printProviders();
 
                     //************* select a provider **************
                    System.out.println("Input provider name");
@@ -185,12 +196,13 @@ public class Interface {
                    else
                        System.out.println("Cannot find");
 
+                   mainController.printServices();
+
                     //*********** add service to provider ************
                     System.out.println("Input service name");
 
-                    dataController tmpService = new dataController();
                     Service findService;
-                    findService = tmpService.selectService(userInput);
+                    findService = mainController.selectService(userInput);
 
                     if(findService != null) {
                         findService.printAll();

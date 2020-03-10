@@ -235,6 +235,8 @@ public class dataController {
         providers.add(newProvider);
     }
 
+    void addService(Service newService){services.add(newService);}
+
     //returns a provider inside of dataController from user input
     providerData selectProvider(Scanner providerName) {
         String find = providerName.nextLine();
