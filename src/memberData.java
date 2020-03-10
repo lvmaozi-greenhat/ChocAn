@@ -27,5 +27,6 @@ public class memberData extends Data{
 
     public void writeReport() {
         //write a member report to reports/memberReport.txt
+        //TODO: Implement
     }
 }
