@@ -24,4 +24,8 @@ public class memberData extends Data{
         System.out.println("********** I am the line *****************");
         System.out.println();
     }
+
+    public void writeReport() {
+        //write a member report to reports/memberReport.txt
+    }
 }

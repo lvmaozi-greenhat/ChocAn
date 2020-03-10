@@ -100,4 +100,16 @@ public class Data {
             setData(userInput);
         }while(userInput.next().equalsIgnoreCase("Y"));
     }
+
+    public Service selectService(Scanner userInput) {
+        //select a service from data arrayList and return
+
+        //null service
+        Service tmpServe = new Service();
+        return tmpServe;
+    }
+
+    public void addService(Service tmpService) {
+        //add a service to data class arrayList
+    }
 }
