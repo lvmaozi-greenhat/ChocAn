@@ -42,10 +42,10 @@ public class Data {
     public void printAll(){
         System.out.println(name);
         System.out.println(number);
-        System.out.println(address);
-        System.out.println(city);
-        System.out.println(state);
-        System.out.println(zip_code);
+        //System.out.println(address);
+        //System.out.println(city);
+        //System.out.println(state);
+        //System.out.println(zip_code);
         System.out.println();
     }
 
@@ -65,27 +65,27 @@ public class Data {
     public void setData(Scanner userInput){
         //米哥 让用户输入 然后把所有数据重新设一遍 除了 （services list 重的data）
 
-        System.out.println("Please enter the name of member:");
+        System.out.println("Please enter a name");
         if(userInput.hasNextLine()) {
             this.name = userInput.nextLine();
         }
-        System.out.println("Please enter number:");
+        System.out.println("Please enter ID number:");
         if(userInput.hasNextLine()) {
             this.number = Integer.parseInt(userInput.nextLine());
         }
-        System.out.println("Please enter the address:");
+        System.out.println("Please enter address:");
         if(userInput.hasNextLine()) {
             this.address = userInput.nextLine();
         }
-        System.out.println("Please enter the city that you living:");
+        System.out.println("Please enter address city");
         if(userInput.hasNextLine()) {
             this.city = userInput.nextLine();
         }
-        System.out.println("Please enter the state:");
+        System.out.println("Please enter state:");
         if(userInput.hasNextLine()) {
             this.state = userInput.nextLine();
         }
-        System.out.println("Please enter the zip code:");
+        System.out.println("Please enter zip code:");
         if(userInput.hasNextLine()) {
             this.zip_code =  Integer.parseInt(userInput.nextLine());
         }
@@ -93,11 +93,44 @@ public class Data {
 
     public void editInfor(Scanner userInput){
         //米哥 让用户输入 然后把修改数据 除了 （services list 重的data）
+        System.out.println("What would you like to edit?");
+        System.out.println("1: Name");
+        System.out.println("2: Address");
+        System.out.println("3: City");
+        System.out.println("4: State");
+        System.out.println("5: Zip Code");
+        System.out.println("Q: quit");
+        String in = userInput.nextLine();
 
-        //userInput = new Scanner(System.in);
-        do{
-            System.out.println("Do you want to update the information? Y/N");
-            setData(userInput);
-        }while(userInput.next().equalsIgnoreCase("Y"));
+        switch(in) {
+            case "1":
+                System.out.println("Enter a new name");
+                name = userInput.nextLine();
+                break;
+            case "2":
+                System.out.println("Enter a new address");
+                address = userInput.nextLine();
+                break;
+            case "3":
+                System.out.println("Enter a new city");
+                city = userInput.nextLine();
+                break;
+            case "4":
+                System.out.println("Enter a new state");
+                state = userInput.nextLine();
+                break;
+            case "5":
+                System.out.println("Enter a new Zip Code");
+                int newZip = userInput.nextInt();
+                userInput.nextLine();
+                zip_code = newZip;
+                break;
+            case "q":
+            case "Q":
+                break;
+
+            default:
+                System.out.println("Incorrect Input!");
+        }
     }
 }

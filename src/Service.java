@@ -58,6 +58,34 @@ public class Service {
         fileInput.nextLine();
     }
 
+    public Service(providerData inputProvider,memberData inputMember, Scanner userInput) {
+       try{
+            System.out.println("Enter Today's date in dd-MM-yyyy format");
+            String tempDate = userInput.nextLine();
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
+            occurred_date = sdf.parse(tempDate);
+       } catch (ParseException e) {
+           System.out.println("Incorrect date format! Aborting");
+       }
+       //SimpleDateFormat sdf2 = new SimpleDateFormat("dd-mm-yyyy");
+       received_in_system = new Date();
+       member_name = inputMember.name;
+       provider_name = inputProvider.name;
+       System.out.println("Enter a service name:");
+       service_name = userInput.nextLine();
+       System.out.println("Enter comments:");
+       comments = userInput.nextLine();
+       member_id = inputMember.number;
+       provider_id = inputProvider.number;
+       System.out.println("Enter service ID:");
+       service_id = userInput.nextInt();
+       userInput.nextLine();
+       System.out.println("Enter fee:");
+       fee = userInput.nextDouble();
+       userInput.nextLine();
+    }
+
     //printAll information
     public void printAll(){
         System.out.println(occurred_date);
@@ -143,12 +171,34 @@ public class Service {
         }
     }
 
-    public void editInfor(Scanner userInput){
-      //用户修改数据
+    public void editInfor(Scanner userInput) {
+        //用户修改数据
         //userInput = new Scanner(System.in);
-        do{
-            System.out.println("Do you want to update the information? Y/N");
-            setService(userInput);
-        }while(userInput.next().equalsIgnoreCase("Y"));
+
+        System.out.println("What would you like to edit?");
+        System.out.println("1: Service Name");
+        System.out.println("2: Service Fee");
+        System.out.println("Q: quit");
+        String in = userInput.nextLine();
+
+        switch (in) {
+            case "1":
+                System.out.println("Enter a new name");
+                String newName = userInput.nextLine();
+                service_name = newName;
+                break;
+            case "2":
+                System.out.println("Enter a new service Fee");
+                double newID = userInput.nextDouble();
+                userInput.nextLine();
+                fee = newID;
+                break;
+            case "q":
+            case "Q":
+                break;
+
+            default:
+                System.out.println("Incorrect Input!");
+        }
     }
 }
