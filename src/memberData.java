@@ -55,6 +55,22 @@ public class memberData extends Data{
             bw.append("\n");
             bw.append(state);
             bw.append("\n");
+            bw.append("================");
+            bw.append("\n");
+            bw.append("List of all services:");
+            bw.append("\n");
+            for(Service serviceInMember : services){
+                bw.append(sdf.format(serviceInMember.occurred_date));
+                bw.append("\n");
+                bw.append(serviceInMember.provider_name);
+                bw.append("\n");
+                bw.append(serviceInMember.service_name);
+                bw.append("\n");
+                bw.append("\n");
+            }
+            bw.append("\n");
+            bw.append("================");
+            bw.append("\n");
             bw.append("\n");
             bw.append("Total fee due: ");
             bw.append(Double.toString(totalFee));
