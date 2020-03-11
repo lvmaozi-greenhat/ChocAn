@@ -1,4 +1,5 @@
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -33,6 +34,10 @@ public class memberData extends Data{
 
     public void writeReport() {
         //write a member report to reports/memberReport.txt
+        File file1 = new File("reports/memberReport.txt");
+        if(file1.exists())
+            file1.delete();
+
         BufferedWriter bw;
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         int totalServices = 0;
@@ -54,6 +59,8 @@ public class memberData extends Data{
             bw.append(city);
             bw.append("\n");
             bw.append(state);
+            bw.append("\n");
+            bw.append(Integer.toString(zip_code));
             bw.append("\n");
             bw.append("================");
             bw.append("\n");
@@ -80,6 +87,7 @@ public class memberData extends Data{
 
 
             bw.close();
+            System.out.println("Report written to reports/memberReport.txt");
         } catch (Exception x) {
             System.out.println("File writing error.");
         }
