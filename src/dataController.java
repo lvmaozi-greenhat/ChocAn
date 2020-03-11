@@ -177,9 +177,9 @@ public class dataController {
 
         if(file1.exists() && file2.exists() && file3.exists()) {
             if (file1.delete() && file2.delete() && file3.delete()) {
-                System.out.println(" DELETED");
+                //System.out.println(" DELETED");
             } else {
-                System.out.println("Failed Deleted");
+                System.out.println("File deletion failed");
             }
         }
 
@@ -213,16 +213,18 @@ public class dataController {
     //returns a member inside of dataController from user input
     public memberData selectMember(Scanner input)
     {
-        //TODO: Edit for user friendlyness
-        int toFind = input.nextInt();
-        input.nextLine();
-        for(memberData member : members)
-        {
-            if(member.number==toFind)
-                return member;
+        //TODO: Edit for input sanitation
+        while(true) {
+            System.out.println("Enter member ID of user you wish to select");
+            int toFind = input.nextInt();
+            input.nextLine();
+            for (memberData member : members) {
+                if (member.number == toFind)
+                    return member;
+            }
+            System.out.println("Member not found. Please try again.");
         }
 
-        return null;
     }
 
     //deletes member object from dataController
@@ -240,27 +242,34 @@ public class dataController {
     void addService(Service newService){services.add(newService);}
 
     //returns a provider inside of dataController from user input
-    providerData selectProvider(Scanner providerName) {
-        //TODO: Revise for user friendlyness
-        String find = providerName.nextLine();
-        for (providerData provider : providers) {
-            if (provider.isMatch(find)) {
-                return provider;
+    providerData selectProvider(Scanner userInput) {
+        //TODO: Revise for user input sanitation
+        while(true) {
+            System.out.println("Enter Provider ID: ");
+            int find = userInput.nextInt();
+            userInput.nextLine();
+            for (providerData provider : providers) {
+                if (provider.isMatch(find)) {
+                    return provider;
+                }
             }
+            System.out.println("Provider not found. Please try again.");
         }
-        return null;
     }
 
     //returns a service inside of dataController from user input
     Service selectService(Scanner serviceName) {
-        //TODO: Revise for user friendlyness
-        String find = serviceName.nextLine();
-        for (Service servicer : services) {
-            if (servicer.isMatch(find)) {
-                return servicer;
+        //TODO: Revise for input sanitation
+        while(true) {
+            System.out.println("Enter Service Name:");
+            String find = serviceName.nextLine();
+            for (Service servicer : services) {
+                if (servicer.isMatch(find)) {
+                    return servicer;
+                }
             }
+            System.out.println("Service not found, try again.");
         }
-        return null;
     }
 
 }

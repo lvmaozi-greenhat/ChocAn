@@ -11,7 +11,7 @@ public class memberData extends Data{
     }
     public void printAll(){
         super.printAll();
-
+/*
         if(services.isEmpty()==false) {
             System.out.println("     |Services information|");
             for (Service service : services) {
@@ -23,6 +23,8 @@ public class memberData extends Data{
         }
         System.out.println("********** I am the line *****************");
         System.out.println();
+
+ */
     }
 
     public void writeReport() {

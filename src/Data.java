@@ -42,10 +42,10 @@ public class Data {
     public void printAll(){
         System.out.println(name);
         System.out.println(number);
-        System.out.println(address);
-        System.out.println(city);
-        System.out.println(state);
-        System.out.println(zip_code);
+        //System.out.println(address);
+        //System.out.println(city);
+        //System.out.println(state);
+        //System.out.println(zip_code);
         System.out.println();
     }
 
@@ -105,23 +105,19 @@ public class Data {
         switch(in) {
             case "1":
                 System.out.println("Enter a new name");
-                String newName = userInput.nextLine();
-                name = newName;
+                name = userInput.nextLine();
                 break;
             case "2":
                 System.out.println("Enter a new address");
-                String newAddress = userInput.nextLine();
-                address = newAddress;
+                address = userInput.nextLine();
                 break;
             case "3":
                 System.out.println("Enter a new city");
-                String newCity = userInput.nextLine();
-                city = newCity;
+                city = userInput.nextLine();
                 break;
             case "4":
                 System.out.println("Enter a new state");
-                String newState = userInput.nextLine();
-                state = newState;
+                state = userInput.nextLine();
                 break;
             case "5":
                 System.out.println("Enter a new Zip Code");
