@@ -1,4 +1,8 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,6 +33,39 @@ public class memberData extends Data{
 
     public void writeReport() {
         //write a member report to reports/memberReport.txt
-        //TODO: Implement
+        BufferedWriter bw;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        int totalServices = 0;
+        double totalFee = 0;
+
+        for(Service serviceInMember : services){
+                totalFee += serviceInMember.fee;
+                totalServices++;
+        }
+
+        try {
+            bw = new BufferedWriter(new FileWriter("reports/memberReport.txt", true));
+            bw.append(name);
+            bw.append("\n");
+            bw.append(Integer.toString(number));
+            bw.append("\n");
+            bw.append(address);
+            bw.append("\n");
+            bw.append(city);
+            bw.append("\n");
+            bw.append(state);
+            bw.append("\n");
+            bw.append("\n");
+            bw.append("Total fee due: ");
+            bw.append(Double.toString(totalFee));
+            bw.append("\n");
+            bw.append("Total number of services provided: ");
+            bw.append(Integer.toString(totalServices));
+
+
+            bw.close();
+        } catch (Exception x) {
+            System.out.println("File writing error.");
+        }
     }
 }
